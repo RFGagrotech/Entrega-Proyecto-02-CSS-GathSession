@@ -1,0 +1,262 @@
+@use "../abstracts" as abs;
+
+html, body {
+    background-color: abs.$bg-color;
+}
+
+.hero{
+    margin-top: 56px;
+    max-width: 620px;
+    position: relative;
+    z-index: 3;
+}
+
+.hero h1{
+    font-family: abs.$merri;
+    font-weight: 700;
+    color: abs.$h1-color;
+    font-size: 70px;          
+    line-height: normal;
+    font-style: normal;
+    letter-spacing: .2px;
+    margin: 0 0 18px 0;
+    padding-top: 50px;
+    width: 800px;
+}
+
+.hero p{
+    font-family: abs.$pop;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.7;
+    color: abs.$p-color;
+    width: 570px;
+    margin: 0 0 26px 0;
+}
+
+.hero button{
+    font-family: abs.$pop;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    white-space: nowrap; 
+    line-height: 1;
+}
+
+.hero button:first-of-type{
+    background: abs.$buttom-color;
+    color: abs.$h1-color;
+    margin-right: 12px;
+    padding: 16px abs.$btn-padx;
+    min-width: 170px;
+    border-radius:8px 8px 8px 0;
+}
+.hero button:first-of-type:hover{
+    background-color: abs.$bg-color;
+    border-color: abs.$buttom-color;
+    color: abs.$buttom-color;
+}
+
+.hero button:last-of-type{
+    background: transparent;
+    color: abs.$h1-color;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: underline;
+    border:1px solid transparent;
+}
+.hero button:last-of-type:hover{
+    border:1px solid abs.$h1-color;
+    text-decoration: none;
+}
+
+.hero .Arrow{
+    display: inline-block;
+    height: 30px;
+    width: auto;
+    translate: 0 1px;
+}
+
+.treatments {
+    margin-top: 100px;
+    display: flex;          
+    font-weight: 600;   
+    gap: 50px;                  
+    align-items: center;
+    width: max-content;
+    position: relative;
+    z-index: 3;
+}
+
+.treatments .titem:nth-child(3) {
+  margin-left: -30px;
+}
+
+.titem {
+    display: flex;
+    align-items: center;
+    gap: 10px;    
+}
+
+.treatments .square{
+    display: grid;
+    place-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 16px;
+    background: abs.$square-color;
+    margin: 0;   
+}
+
+.treatments .square img{
+    width: 30px;
+    height: 30px;
+}
+
+.treatments p{
+    font-family: abs.$pop;
+    font-weight: 600;
+    color: abs.$h1-color;
+    font-size: 14px;
+    margin: 0;
+    line-height: 1.15;
+    max-width: 96px;            
+    white-space: normal;
+    text-decoration: none; 
+}
+.treatments p:nth-child(2) {
+    max-width: 60px;
+}
+
+.hero-people{
+  position: absolute;
+  top: 150px;
+  right: 370px;
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  grid-auto-rows: 250px;     
+  column-gap: 40px;
+  row-gap: 35px;
+  pointer-events: none;
+}
+
+.hero-people::before{
+  content:"";
+  position:absolute;
+  width:1120px; 
+  height:1120px;   
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.18);
+  top:50px; 
+  right:-435px;      
+  z-index:0;
+  pointer-events:none;
+}
+
+.hero-people::after{
+  content: "";
+  position: absolute;
+  width: 760px;         
+  height: 760px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.25); 
+  top: 310px;           
+  right: -270px;
+  z-index: 0;          
+  pointer-events: none;
+}
+
+.hero-people span{
+  width: 100%;
+  height: 100%;
+  border-radius: 70px;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 0 8px 32px rgba(0,0,0,.35);
+    --x: 50%;   
+    --y: 50%;  
+}
+
+.hero-people span img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          
+    object-position: var(--x, 50%) var(--y, 50%); 
+    position: static;           
+    transform: none;
+}
+
+.back_g1, .back_g2, .back_w2 { 
+    grid-row: span 2; 
+}
+
+.hero-people .back_g1{       /*El negro*/
+    grid-column: 1; 
+    grid-row: 1 / span 2; 
+    background: abs.$guy1-color;
+    height: 430px; 
+    align-self: start;
+}
+.hero-people .back_g1 img{  
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 38%;
+}
+
+.hero-people .back_w2{      /*asiatica*/
+    grid-column: 2; 
+    grid-row: 1;   
+    background: abs.$woman1-color;
+    height: 195px;
+}
+.hero-people .back_w2 img{
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+}  
+
+.hero-people .back_g2{      /*Risitas*/
+    grid-column: 2; 
+    grid-row: 2 / span 2;   
+    background: abs.$guy2-color; 
+    height: 435px;
+    transform: translatey(-70px);
+}
+.hero-people .back_g2 img{
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+}
+
+.hero-people .back_w1{      /*mulata*/
+    grid-column: 3; 
+    grid-row: 2/span 2;            
+    background: abs.$woman2-color;
+    height: 390px;
+    transform: translatey(-150px);
+}
+.hero-people .back_w1 img{
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+}
+
+.hero-people .back_w3{      /*Pelirroja*/
+    grid-column: 1; 
+    grid-row: 3;
+    align-self: start;
+    height: 185px;
+    background: abs.$woman3-color;
+    transform: translateY(-110px);
+}
+.hero-people .back_w3 img{
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 42%;
+}
+
+

@@ -1,0 +1,60 @@
+@use "../abstracts" as abs;
+
+.header{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    padding-top: abs.$top-pad;
+    position: relative;
+    z-index: 5;
+    column-gap: 200px
+}
+
+.header figure img { 
+    height: 30px; 
+    width: auto; 
+    display: block; 
+} 
+
+.sr-only {
+    position: absolute; 
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden; 
+    clip-path: inset(50%); 
+    white-space: nowrap; 
+    border: 0; 
+}
+
+.principal {
+    justify-self: center; 
+}
+
+.principal ul{
+    display: inline-flex;
+    gap: 50px;
+    font-family: abs.$pop;
+    font-weight: 400;
+    font-size: 13px;
+    white-space: nowrap; 
+}
+
+.principal ul li a{
+    text-decoration: none;
+    color: abs.$h1-color;
+    opacity: .85;
+    display: inline-flex;
+    align-items: center;
+    position: relative; 
+}
+
+.principal ul li:first-child a{
+    opacity: 1;
+    font-weight: 600;
+}
+.rectangle {
+    display: flex;
+    transform: translate(835px);
+}
